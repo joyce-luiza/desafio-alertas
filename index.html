@@ -7,11 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alertas</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="components.css">
 </head>
 
 <body>
-    <p>hello!</p>
+    <header id="top-bar">
+        <img src="imgs/comply logo.png" alt="Logo Comply" id="logo--comply">
+        <div id="top-bar-inputs">
+            <div class="input input-small">
+                <label for="cadeia-de-fornecimento">Cadeia de fornecimento</label>
+                <select name="cadeia-de-fornecimento" id="cadeia-de-fornecimento">
+                    <option value="15 dias antes">Cadeia de Fornecimento 1</option>
+                    <option value="cadeia-de-fornecimento-2">Cadeia de Fornecimento 2</option>
+                    <option value="cadeia-de-fornecimento-3">Cadeia de Fornecimento 3</option>
+                    <option value="cadeia-de-fornecimento-4">Cadeia de Fornecimento 4</option>
+                </select>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" fill="rgba(4,75,214,1)" />
+            </svg>
+            <div class="input  input-small">
+                <label for="empresa">Empresa</label>
+                <select name="empresa" id="empresa">
+                    <option value="empresa-1">Empresa 1</option>
+                    <option value="empresa-2">Empresa 2</option>
+                    <option value="empresa-3">Empresa 3</option>
+                    <option value="empresa-4">Empresa 4</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <script src="script.js"></script>
 </body>
 
 </html>
