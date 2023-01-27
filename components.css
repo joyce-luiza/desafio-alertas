@@ -70,3 +70,163 @@
     left: 16px;
     fill: rgba(61, 61, 61, 0.7);
 }
+
+/* ----- Breadcrumbs -----*/
+
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    font-weight: 600;
+    color: rgba(61, 61, 61, 0.7);
+}
+
+.breadcrumb p:last-child {
+    color: rgba(4, 75, 214, 1);
+}
+
+/* ----- Tabs -----*/
+
+.tabs {
+    display: flex;
+    grid-column: 1 / 13;
+}
+
+.tab {
+    width: 100%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    padding: 12px 0;
+    color: rgba(61, 61, 61, 0.5);
+    border-bottom: 4px solid rgba(61, 61, 61, 0.5);
+}
+
+.tab:first-child {
+    color: #044bd6;
+    border-bottom: 4px solid #044bd6;
+}
+
+.tab:last-child {
+    width: 100%;
+    border-bottom: 4px solid rgba(61, 61, 61, 0.5);
+}
+
+/* ----- Buttons -----*/
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    fill: rgba(4, 75, 214, 1);
+}
+
+.button-primary {
+    padding: 12px 16px;
+    background-color: rgba(4, 75, 214, 1);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-primary:hover {
+    background-color: #02266b;
+    fill: #02266b;
+}
+
+.button-secondary {
+    padding: 12px 16px;
+    color: rgba(4, 75, 214, 1);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    width: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-secondary:hover {
+    color: #02266b;
+    fill: #02266b;
+}
+
+/* ----- Switch -----*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch {
+    display: flex;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(61, 61, 61);
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(61, 61, 61, 0.5);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: rgba(4, 75, 214, 1);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px rgba(4, 75, 214, 1);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

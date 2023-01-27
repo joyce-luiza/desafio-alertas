@@ -106,3 +106,88 @@ body {
 #logo--supplylabs {
     height: 50px;
 }
+
+/* ----- Página de alertas ----- */
+
+#alertas {
+    margin-left: 15vw;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    padding: 48px 80px;
+    margin-top: 96px;
+    height: 100%;
+}
+
+/*Título e pesquisa de alertas de documentos*/
+
+#title--alertas-documentos {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #010f2b;
+    grid-column: 1/5;
+}
+
+#input-search--alert {
+    grid-column: 7 / 10;
+}
+
+#button--new-alert {
+    grid-column: 10 / 13;
+}
+
+/* Listagem de alertas */
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 32px;
+    grid-column: 1 / 13;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    background: #ffffff;
+    box-shadow: 0px 0px 16px rgba(61, 61, 61, 0.1);
+    border-radius: 4px;
+    color: rgba(61, 61, 61, 0.7);
+}
+
+.card .card-title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    color: rgba(61, 61, 61);
+    fill: rgba(61, 61, 61);
+}
+
+.card-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.card-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-action:not(:first-child) {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(4, 75, 214, 1);
+    fill: rgba(4, 75, 214, 1);
+    cursor: pointer;
+    transition: 0.3s;
+}
