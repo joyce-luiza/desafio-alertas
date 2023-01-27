@@ -1,0 +1,72 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.input label {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #044bd6;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.input label {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #044bd6;
+}
+
+.input input,
+.input select {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid rgba(61, 61, 61, 0.5);
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.input-small > input,
+.input-small > select {
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.input-large > input,
+.input-large > select {
+    padding: 12px 16px;
+    font-size: 20px;
+}
+
+.input--icon {
+    position: relative;
+}
+
+.input--icon input {
+    padding-left: 52px;
+}
+
+.input--icon svg {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    fill: rgba(61, 61, 61, 0.7);
+}
