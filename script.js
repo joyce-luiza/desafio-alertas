@@ -40,7 +40,7 @@ const listAllAlerts = () => {
                             </svg>
                             Ver logs
                         </button>
-                        <button id="alert-details-${index}" class="button-secondary button-small" onclick="addAlertDetails(${index}); showAlertDetails(${index})">
+                        <button id="alert-details-${index}" class="button-secondary button-small" onclick="addAlertDetails(${index})">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path d="M20 22H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1zm-1-2V4H5v16h14zM8 7h8v2H8V7zm0 4h8v2H8v-2zm0 4h5v2H8v-2z" "/></svg>
@@ -53,7 +53,7 @@ const listAllAlerts = () => {
                                     </svg>
                                     Editar
                         </button>
-                        <button id="alert-delete-${index}" class="button-secondary button-small">
+                        <button id="alert-delete-${index}" class="button-secondary button-small" onclick="deleteAlert(${index})">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zM9 4v2h6V4H9z" />
@@ -77,7 +77,7 @@ const addAlertDetails = (index) => {
                     <div class="toggle-switch">
                         <label class="switch">
                             ${
-                                alert.alerts
+                                allAlerts[index].alerts
                                     ? `<input id="switch-alerts-${index}" type="checkbox" checked>`
                                     : `<input id="switch-alerts-${index}" type="checkbox">`
                             }   
@@ -128,33 +128,62 @@ const addAlertDetails = (index) => {
     };
 };
 
-const showAlertDetails = (index) => {};
+const deleteAlert = (index) => {
+    const deleteEl = `
+    <div id="view-alert" class="modal-content">
+                    <h1>Deletar alerta ${allAlerts[index].name}?</h1>
+                    <span id="close-delete-${index}" class="close">&times;</span>
+                    <p>Tem certeza que deseja deletar o alerta ${allAlerts[index].name}? Esta ação não pode ser desfeita.</p>
+                    <div id="view-alert--actions">
+                        <button id="close-delete-${index}" class="button-secondary button-medium">
+                            Cancelar</button>
+                        <button id="btn-alert-delete-${index}" class="button-primary button-medium">
+                            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zM9 4v2h6V4H9z" />
+                            </svg>
+                            Deletar alerta</button>
+                    </div>
+                </div>
+    `;
+    let modal = document.getElementById("alert-delete");
+    modal.innerHTML += deleteEl;
+    modal.style.display = "block";
 
-// /* Modal */
-// // Get the modal
-// var alertDetails = document.getElementById("alert-details");
+    let btn = document.getElementById(`btn-alert-delete-${index}`);
 
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
+    console.log(btn);
 
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
+    btn.onclick = () => {
+        allAlerts = allAlerts.splice(index, 1);
+        modal.style.display = "none";
+        modal.innerHTML = "";
+        listAllAlerts();
+        addAlertSuccess("O alerto foi deletado com sucesso!");
+    };
 
-// // When the user clicks on the button, open the modal
-// btn.onclick = function () {
-//     alertDetails.style.display = "block";
-// };
+    var span = document.getElementById(`close-delete-${index}`);
 
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function () {
-//     alertDetails.style.display = "none";
-// };
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+        modal.innerHTML = "";
+    };
 
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//     if (event.target == alertDetails) {
-//         alertDetails.style.display = "none";
-//     }
-// };
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            modal.innerHTML = "";
+        }
+    };
+};
+
+const addAlertSuccess = (text) => {
+    let message = document.getElementById("success-message--alert");
+    document.getElementById("success-message--text").innerHTML = text;
+    message.classList.add("active-animation");
+    setTimeout(() => message.classList.remove("active-animation"), 7000);
+};
 
 window.onload = listAllAlerts();
