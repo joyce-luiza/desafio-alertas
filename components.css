@@ -124,16 +124,23 @@ button {
     fill: rgba(4, 75, 214, 1);
 }
 
-.button-primary {
+.button-medium {
     padding: 12px 16px;
+    font-size: 20px;
+}
+
+.button-small {
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+.button-primary {
     background-color: rgba(4, 75, 214, 1);
     border: none;
     border-radius: 4px;
     font-weight: 600;
-    font-size: 20px;
     line-height: 24px;
     color: #fff;
-    width: 100%;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -144,14 +151,11 @@ button {
 }
 
 .button-secondary {
-    padding: 12px 16px;
     color: rgba(4, 75, 214, 1);
     border: none;
     border-radius: 4px;
     font-weight: 600;
-    font-size: 20px;
     line-height: 24px;
-    width: 100%;
     background-color: transparent;
     cursor: pointer;
     transition: 0.3s;
@@ -229,4 +233,52 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+/* ----- Cards -----*/
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    background: #ffffff;
+    box-shadow: 0px 0px 16px rgba(61, 61, 61, 0.1);
+    border-radius: 4px;
+    color: rgba(61, 61, 61, 0.7);
+}
+
+.card .card-title {
+    display: flex;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    color: rgba(61, 61, 61);
+    fill: rgba(61, 61, 61);
+}
+
+.card-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.card-action:not(:first-child) {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(4, 75, 214, 1);
+    fill: rgba(4, 75, 214, 1);
+    cursor: pointer;
+    transition: 0.3s;
 }
