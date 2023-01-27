@@ -47,3 +47,62 @@ body {
     justify-self: center;
     margin-bottom: 4px;
 }
+
+#nav-bar {
+    position: fixed;
+    width: 15vw;
+    padding: 24px;
+    background-color: #e2ecfe;
+    top: 96px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#nav-bar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#nav-bar li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 8px 16px 12px;
+    gap: 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+    fill: rgba(61, 61, 61, 0.6);
+    color: rgba(61, 61, 61, 0.6);
+}
+
+#nav-bar p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+#nav-bar li:hover {
+    /* background-color: #c6d9fe; */
+    fill: rgba(4, 75, 214, 1);
+    color: #044bd6;
+}
+
+#nav-bar--top li:first-child {
+    background-color: #c6d9fe;
+    fill: rgba(4, 75, 214, 1);
+    color: #044bd6;
+}
+
+#logo--comply {
+    height: 40px;
+}
+
+#logo--supplylabs {
+    height: 50px;
+}
